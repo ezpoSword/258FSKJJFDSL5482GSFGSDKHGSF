@@ -2836,37 +2836,6 @@ function isDarkColor(rgbArray) {
   return brightness < 50;
 }
 
-function MakeBlacksTransparent() {
-  const allElements = document.querySelectorAll("*");
-  allElements.forEach(el => {
-    const style = window.getComputedStyle(el);
-
-    let bg = style.backgroundColor;
-    let bgRgb = rgbToArray(bg);
-    if (isDarkColor(bgRgb)) {
-      el.style.backgroundColor = "rgba(0,0,0,0)";
-    }
-
-    let color = style.color;
-    let colorRgb = rgbToArray(color);
-    if (isDarkColor(colorRgb)) {
-      el.style.color = "rgba(0,0,0,0)";
-    }
-  });
-}
-
 // 3 saniye sonra otomatik çalıştırmak için:
-setTimeout(MakeBlacksTransparent, 3000);
-
-			Refresh = function () {
-				var text = GetText();
-				SetText("");
-				editor.trigger('keyboard', 'type', {
-					text: text
-				});
-			}
-		});
-	</script>
-</body>
 
 </html>
