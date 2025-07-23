@@ -2821,21 +2821,15 @@ function setupAutosave() {
 
 			}
 			load();
-      function rgbToArray(rgb) {
-  if (!rgb) return null;
-  let result = rgb.match(/\d+/g);
-  if (result && result.length >= 3) {
-    return result.slice(0,3).map(x => parseInt(x));
-  }
-  return null;
-}
-
-function isDarkColor(rgbArray) {
-  if (!rgbArray) return false;
-  let brightness = (rgbArray[0]*299 + rgbArray[1]*587 + rgbArray[2]*114) / 1000;
-  return brightness < 50;
-}
-
-// 3 saniye sonra otomatik çalıştırmak için:
+			Refresh = function () {
+				var text = GetText();
+				SetText("");
+				editor.trigger('keyboard', 'type', {
+					text: text
+				});
+			}
+		});
+	</script>
+</body>
 
 </html>
